@@ -14,3 +14,13 @@
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+:host {
+  .currencyFont {
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 100px;
+  }
+}

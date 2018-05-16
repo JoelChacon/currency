@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../cpol-currency/cpol-currency.html">
 <link rel="import" href="format-currency-styles.html">
 <!--
 `<format-currency>` description.
@@ -30,9 +31,15 @@ The following custom properties and mixins are available for styling:
   <template>
     <style include="format-currency-styles format-currency-shared-styles"></style>
     <slot></slot>
-
-    <p>Welcome to Cells</p>
-
+    <cpol-currency 
+      id="money"
+      class="currencyFont"
+      amount='[[amount]]'
+      currency-suffix='[[currencySuffix]]'
+      currency-prefix='[[currencyPrefix]]'
+      value-separator='[[separator]]'
+      generate-currency='{{value}}'
+    ></cpol-currency>
   </template>
   <script src="format-currency.js"></script>
 </dom-module>

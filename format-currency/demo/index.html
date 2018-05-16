@@ -14,7 +14,54 @@
     <cells-demo-helper available-themes='["cells-coronita-base-theme"]'>
       <cells-demo-case heading="Basic" description="A basic example">
         <template>
-          <format-currency></format-currency>
+          <dom-bind>
+            <template is="dom-bind" id="demo">
+              <format-currency
+                currency-code="[[data.currency]]"
+                separator="[[data.currencySeparator]]"
+                value="{{value}}">
+              </format-currency>
+              <button class="button" disabled$="[[!ready]]" on-click="nextQuestion"><span class="btnText">Value</span></button>
+              <script>
+                document.addEventListener('WebComponentsReady', function() {
+                  let demo = document.querySelector(Polymer.Element ? 'dom-bind' : '#demo');
+                  let data = [
+                    {
+                      'id': 'Q01',
+                      'title': 'Sobre ti',
+                      'text': 'Para empezar dinos tu nombre',
+                      'label': 'Nombre',
+                      'image': 'house-calc',
+                      'type': 'text',
+                      'currency': 'US',
+                      'currencySeparator': ',',
+                      'next': 'Q02',
+                    },
+                    {
+                      'id': 'Q02',
+                      'title': 'Sobre lo que tienes en mente',
+                      'text': '¿En qué situación te encuentras?',
+                      'label': 'Situación',
+                      'image': 'house-calc',
+                      'type': 'currency',
+                      'currency': 'EUR',
+                      'currencySeparator': '.',
+                      'next': 'Q03',
+                    }
+                  ];
+
+                  demo.num = 1;
+
+                  demo.data = data[1];
+                  demo.nextQuestion = function() {
+                    console.log(demo.value);
+                  };
+
+                });
+
+              </script>
+            </template>
+          </dom-bind>
         </template>
       </cells-demo-case>
     </cells-demo-helper>

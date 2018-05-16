@@ -7,8 +7,8 @@
   ],
   "ignore": [],
   "dependencies": {
-    
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "cpol-currency": "^1.0.5"
   },
   "devDependencies": {
     "cells-sass": "^2.0.0",
