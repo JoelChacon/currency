@@ -1,0 +1,38 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="format-currency-styles.html">
+<!--
+`<format-currency>` description.
+
+Example:
+
+```html
+<format-currency></format-currency>
+```
+
+## Icons
+
+Since this component uses icons, it will need an [iconset](https://bbva.cellsjs.com/guides/best-practices/cells-icons.html) in your project as an [application level dependency](https://bbva.cellsjs.com/guides/advanced-guides/application-level-dependencies.html). In fact, this component uses an iconset in its demo.
+
+## Styling
+
+The following custom properties and mixins are available for styling:
+
+| Custom property | Description     | Default        |
+|:----------------|:----------------|:---------------|
+| --format-currency  | Mixin applied to :host     | {}  |
+| --cells-fontDefault  | Font family of :host    | sans-serif  |
+
+@customElement
+@polymer
+@demo demo/index.html
+-->
+<dom-module id="format-currency">
+  <template>
+    <style include="format-currency-styles format-currency-shared-styles"></style>
+    <slot></slot>
+
+    <p>Welcome to Cells</p>
+
+  </template>
+  <script src="format-currency.js"></script>
+</dom-module>
